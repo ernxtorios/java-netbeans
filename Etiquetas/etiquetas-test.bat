@@ -1,0 +1,1 @@
+%JAVA-7% -jar S:\Etiquetas\dist\Etiquetas.jar
