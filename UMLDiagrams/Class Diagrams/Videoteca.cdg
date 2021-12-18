@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="InventarioPeliculas">
+  <ClassDiagramComponents>
+    <Class name="Pelicula" package="" visibility="public" xPosition="91.0" yPosition="77.0">
+      <Fields>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="presupuesto" type="double" visibility="private"/>
+        <Field name="calificacion" type="int" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="precuela" type="Pelicula" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="laPelicula" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Videoteca" package="" visibility="public" xPosition="437.0" yPosition="77.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="peliculas" type="ArrayList&lt;Pelicula&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="agregarPelicula" returnType="void" visibility="public">
+          <Argument type="Pelicula" name="pelicula"/>
+        </Method>
+        <Method name="buscarPeliculaCodigo" returnType="Pelicula" visibility="public">
+          <Argument type="String" name="codigo"/>
+        </Method>
+        <Method name="buscarPeliculaTitulo" returnType="Pelicula" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="reportePeliculas" returnType="void" visibility="public"/>
+        <Method name="reportePelicula" returnType="void" visibility="public">
+          <Argument type="Pelicula" name="pelicula"/>
+        </Method>
+        <Method name="menuPrincipal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Pelicula" target="Pelicula" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

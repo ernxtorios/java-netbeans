@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TerminalTerrestre">
+  <ClassDiagramComponents>
+    <Class name="Bus" package="" visibility="public" xPosition="354.0" yPosition="28.0">
+      <Fields>
+        <Field name="placa" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="empresa" type="EmpresaTransporte" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="placa"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TerminalTerrestre" package="" visibility="public" xPosition="42.0" yPosition="668.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="tarifaVehiculoCarga" type="double" visibility="private" isFinal="true"/>
+        <Field name="tarifaVehiculoPasajeros" type="double" visibility="private" isFinal="true"/>
+        <Field name="porcentajeImpuestoBus" type="double" visibility="private" isFinal="true"/>
+        <Field name="buses" type="ArrayList&lt;Bus&gt;" visibility="private"/>
+        <Field name="empresas" type="ArrayList&lt;EmpresaTransporte&gt;" visibility="private"/>
+        <Field name="ingresos" type="ArrayList&lt;Ingreso&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="agregarBus" returnType="void" visibility="public">
+          <Argument type="Bus" name="bus"/>
+        </Method>
+        <Method name="modificarBus" returnType="void" visibility="public">
+          <Argument type="Bus" name="bus"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarBus" returnType="void" visibility="public">
+          <Argument type="Bus" name="bus"/>
+        </Method>
+        <Method name="buscarBus" returnType="Bus" visibility="public">
+          <Argument type="Bus" name="bus"/>
+        </Method>
+        <Method name="buscarBus" returnType="Bus" visibility="public">
+          <Argument type="String" name="placa"/>
+        </Method>
+        <Method name="buscarBusMarca" returnType="ArrayList&lt;Bus&gt;" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="buscarBusModelo" returnType="ArrayList&lt;Bus&gt;" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="buscarBus" returnType="ArrayList&lt;Bus&gt;" visibility="public">
+          <Argument type="EmpresaTransporte" name="empresa"/>
+        </Method>
+        <Method name="agregarEmpresaTransporte" returnType="void" visibility="public">
+          <Argument type="EmpresaTransporte" name="empresa"/>
+        </Method>
+        <Method name="modificarEmpresaTransporte" returnType="void" visibility="public">
+          <Argument type="EmpresaTransporte" name="empresa"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarEmpresaTransporte" returnType="void" visibility="public">
+          <Argument type="EmpresaTransporte" name="empresa"/>
+        </Method>
+        <Method name="buscarEmpresaTransporte" returnType="EmpresaTransporte" visibility="public">
+          <Argument type="EmpresaTransporte" name="empresa"/>
+        </Method>
+        <Method name="buscarEmpresaTransporte" returnType="EmpresaTransporte" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="buscarEmpresaTransporteTipo" returnType="ArrayList&lt;EmpresaTransporte&gt;" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="agregarIngreso" returnType="void" visibility="public">
+          <Argument type="Ingreso" name="ingreso"/>
+        </Method>
+        <Method name="modificarIngreso" returnType="void" visibility="public">
+          <Argument type="Ingreso" name="ingreso"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarIngreso" returnType="void" visibility="public">
+          <Argument type="Ingreso" name="ingreso"/>
+        </Method>
+        <Method name="buscarIngreso" returnType="Ingreso" visibility="public">
+          <Argument type="Ingreso" name="ingreso"/>
+        </Method>
+        <Method name="buscarIngreso" returnType="Ingreso" visibility="public">
+          <Argument type="Bus" name="bus"/>
+        </Method>
+        <Method name="buscarIngreso" returnType="ArrayList&lt;Ingreso&gt;" visibility="public">
+          <Argument type="Date" name="fecha"/>
+        </Method>
+        <Method name="reporteBuses" returnType="void" visibility="public"/>
+        <Method name="reporteEmpresasTransporte" returnType="void" visibility="public"/>
+        <Method name="reporteIngresos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BusCarga" package="" visibility="public" xPosition="409.0" yPosition="307.0">
+      <Fields>
+        <Field name="pesoCargaMaxima" type="double" visibility="private"/>
+        <Field name="pesoCarga" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+        <Method name="getPeso" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BusPasajeros" package="" visibility="public" xPosition="78.0" yPosition="307.0">
+      <Fields>
+        <Field name="asientosTotales" type="int" visibility="private"/>
+        <Field name="asientosOcupados" type="int" visibility="private"/>
+        <Field name="precioPasaje" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+        <Method name="getAsientosVacios" returnType="int" visibility="public"/>
+        <Method name="InformacionAsientos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BusPasajeroCarga" package="" visibility="public" xPosition="702.0" yPosition="278.0">
+      <Fields>
+        <Field name="asientosTotales" type="int" visibility="private"/>
+        <Field name="asientosOcupados" type="int" visibility="private"/>
+        <Field name="pesoCargaMaxima" type="double" visibility="private"/>
+        <Field name="pesoCarga" type="double" visibility="private"/>
+        <Field name="precioPasaje" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+        <Method name="getAsientosVacios" returnType="int" visibility="public"/>
+        <Method name="getPeso" returnType="void" visibility="public"/>
+        <Method name="InformacionAsientos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EmpresaTransporte" package="" visibility="public" xPosition="817.0" yPosition="28.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="posicionEstacionamiento" type="String" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ingreso" package="" visibility="public" xPosition="67.0" yPosition="28.0">
+      <Fields>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="bus" type="Bus" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Bus" name="bus"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="IBus" package="" visibility="public" xPosition="168.0" yPosition="555.0">
+      <Methods>
+        <Method name="calcularPago" returnType="double" visibility="public">
+          <Argument type="double" name="tarifaVehiculoCarga"/>
+          <Argument type="double" name="tarifaVehiculoPasajeros"/>
+          <Argument type="double" name="porcentajeImpuestoBus"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="BusPasajeroCarga" target="Bus"/>
+    <HasRelation name="tiene" source="EmpresaTransporte" target="Bus" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BusPasajeroCarga" target="IBus"/>
+    <HasRelation name="realiza" source="Bus" target="Ingreso" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BusCarga" target="IBus"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BusPasajeros" target="IBus"/>
+    <IsRelation name="is" source="BusCarga" target="Bus"/>
+    <IsRelation name="is" source="BusPasajeros" target="Bus"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

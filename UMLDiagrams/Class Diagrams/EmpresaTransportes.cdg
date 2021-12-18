@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EmpresaTransportes">
+  <ClassDiagramComponents>
+    <Class name="Vehiculo" package="" visibility="public" xPosition="163.0" yPosition="51.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="placa" type="String" visibility="private"/>
+        <Field name="ano" type="int" visibility="private"/>
+        <Field name="capacidad" type="int" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="placa"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Colectivo" package="" visibility="public" xPosition="34.0" yPosition="397.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="placa"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Bus" package="" visibility="public" xPosition="294.0" yPosition="397.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="placa"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Chofer" package="" visibility="public" xPosition="452.0" yPosition="51.0">
+      <Fields>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="conduce" source="Chofer" target="Vehiculo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Colectivo" target="Vehiculo"/>
+    <IsRelation name="is" source="Bus" target="Vehiculo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

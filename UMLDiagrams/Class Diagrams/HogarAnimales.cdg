@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="HogarAnimales">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="" visibility="public" xPosition="128.0" yPosition="29.0">
+      <Fields>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="peso" type="float" visibility="private"/>
+        <Field name="edad" type="float" visibility="private"/>
+        <Field name="longitud" type="float" visibility="private"/>
+        <Field name="altura" type="float" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="raza" type="String" visibility="private"/>
+        <Field name="adoptante" type="Persona" visibility="private"/>
+        <Field name="registrador" type="Persona" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+        <Method name="datosAdoptante" returnType="void" visibility="public"/>
+        <Method name="datosRegistrador" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Perro" package="" visibility="public" xPosition="23.0" yPosition="492.0">
+      <Fields>
+        <Field name="longitudEsperada" type="float" visibility="private"/>
+        <Field name="alturaEsperada" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gato" package="" visibility="public" xPosition="247.0" yPosition="492.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Adoptante" package="" visibility="public" xPosition="437.0" yPosition="390.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" xPosition="560.0" yPosition="77.0">
+      <Fields>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="animales" type="List&lt;Animal&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+        <Method name="reporteAnimales" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Registrador" package="" visibility="public" xPosition="705.0" yPosition="390.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Registrador" target="Persona"/>
+    <IsRelation name="is" source="Adoptante" target="Persona"/>
+    <IsRelation name="is" source="Gato" target="Animal"/>
+    <HasRelation name="adopta" source="Persona" target="Animal" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Perro" target="Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

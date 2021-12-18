@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Pasteleria">
+  <ClassDiagramComponents>
+    <Class name="Pasteleria" package="" visibility="public" xPosition="35.0" yPosition="680.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="pedidos" type="ArrayList&lt;Pedido&gt;" visibility="private"/>
+        <Field name="tortas" type="ArrayList&lt;Torta&gt;" visibility="private"/>
+        <Field name="eventos" type="ArrayList&lt;Evento&gt;" visibility="private"/>
+        <Field name="itemsPedido" type="ArrayList&lt;DetallePedido&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarPedido" returnType="void" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Method>
+        <Method name="modificarPedido" returnType="void" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarPedido" returnType="void" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Method>
+        <Method name="buscarPedido" returnType="Pedido" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Method>
+        <Method name="buscarPedido" returnType="ArrayList&lt;Pedido&gt;" visibility="public">
+          <Argument type="Date" name="Fecha"/>
+        </Method>
+        <Method name="buscarPedido" returnType="ArrayList&lt;Pedido&gt;" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="buscarPedido" returnType="ArrayList&lt;Pedido&gt;" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="agregarTorta" returnType="void" visibility="public">
+          <Argument type="Torta" name="torta"/>
+        </Method>
+        <Method name="modificarTorta" returnType="void" visibility="public">
+          <Argument type="Torta" name="torta"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarTorta" returnType="void" visibility="public">
+          <Argument type="Torta" name="torta"/>
+        </Method>
+        <Method name="buscarTorta" returnType="Torta" visibility="public">
+          <Argument type="Torta" name="torta"/>
+        </Method>
+        <Method name="buscarTorta" returnType="ArrayList&lt;Torta&gt;" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="buscarTortaPrecio" returnType="ArrayList&lt;Torta&gt;" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+        <Method name="buscarTortaPeso" returnType="ArrayList&lt;Torta&gt;" visibility="public">
+          <Argument type="double" name="peso"/>
+        </Method>
+        <Method name="agregarEvento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="modificarEvento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarEvento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="buscarEvento" returnType="Evento" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="agregarItemPedido" returnType="void" visibility="public">
+          <Argument type="DetallePedido" name="itemPedido"/>
+        </Method>
+        <Method name="modificarItemPedido" returnType="void" visibility="public">
+          <Argument type="DetallePedido" name="itemPedido"/>
+          <Argument type="int" name="indice"/>
+        </Method>
+        <Method name="eliminarItemPedido" returnType="void" visibility="public">
+          <Argument type="DetallePedido" name="itemPedido"/>
+        </Method>
+        <Method name="buscarItemPedido" returnType="DetallePedido" visibility="public">
+          <Argument type="DetallePedido" name="itemPedido"/>
+        </Method>
+        <Method name="buscarItemPedido" returnType="ArrayList&lt;DetallePedido&gt;" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Method>
+        <Method name="buscarItemPedido" returnType="ArrayList&lt;DetallePedido&gt;" visibility="public">
+          <Argument type="String" name="tipoTorta"/>
+        </Method>
+        <Method name="totalItemsPedido" returnType="double" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Method>
+        <Method name="reporteTortas" returnType="void" visibility="public"/>
+        <Method name="reporteEventos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Torta" package="" visibility="public" xPosition="723.0" yPosition="484.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="peso" type="double" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="disponible" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pedido" package="" visibility="public" xPosition="379.0" yPosition="266.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="evento" type="Evento" visibility="private"/>
+        <Field name="tiempoEntrega" type="double" visibility="private" isFinal="true"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DetallePedido" package="" visibility="public" xPosition="434.0" yPosition="649.0">
+      <Fields>
+        <Field name="item" type="int" visibility="private"/>
+        <Field name="torta" type="Torta" visibility="private"/>
+        <Field name="pedido" type="Pedido" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Evento" package="" visibility="public" xPosition="35.0" yPosition="433.0">
+      <Fields>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="lugar" type="String" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="atendido" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="694.0" yPosition="266.0">
+      <Fields>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="estado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EventoNormal" package="" visibility="public" xPosition="270.0" yPosition="127.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="EventoEspecial" package="" visibility="public" xPosition="11.0" yPosition="156.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="Entrega" package="" visibility="public" xPosition="65.0" yPosition="5.0">
+      <Methods>
+        <Method name="tiempoEntrega" returnType="double" visibility="public">
+          <Argument type="double" name="tiempo"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="EventoNormal" target="Entrega"/>
+    <IsRelation name="is" source="EventoNormal" target="Evento"/>
+    <HasRelation name="tiene" source="Pedido" target="DetallePedido" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="EventoEspecial" target="Entrega"/>
+    <HasRelation name="tiene" source="Evento" target="Pedido" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="es parte de" source="Torta" target="DetallePedido" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="EventoEspecial" target="Evento"/>
+    <HasRelation name="realiza" source="Cliente" target="Pedido" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

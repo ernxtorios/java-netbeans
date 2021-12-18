@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="OrdenesPedido">
+  <ClassDiagramComponents>
+    <Class name="Producto" package="" visibility="public" xPosition="692.0" yPosition="14.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="stock" type="int" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="elProducto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Orden" package="" visibility="public" xPosition="31.0" yPosition="14.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="estado" type="boolean" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="numero"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="laOrden" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pedido" package="" visibility="public" xPosition="294.0" yPosition="14.0">
+      <Fields>
+        <Field name="item" type="int" visibility="private"/>
+        <Field name="producto" type="Producto" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="orden" type="Orden" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="item"/>
+          <Argument type="Producto" name="producto"/>
+          <Argument type="int" name="cantidad"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Establecimiento" package="" visibility="public" xPosition="31.0" yPosition="251.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="productos" type="ArrayList&lt;Producto&gt;" visibility="private"/>
+        <Field name="ordenes" type="ArrayList&lt;Orden&gt;" visibility="private"/>
+        <Field name="pedidos" type="ArrayList&lt;Pedido&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="agregarProducto" returnType="void" visibility="public">
+          <Argument type="Producto" name="producto"/>
+        </Method>
+        <Method name="agregarOrden" returnType="void" visibility="public">
+          <Argument type="Orden" name="orden"/>
+        </Method>
+        <Method name="agregarPedido" returnType="void" visibility="public">
+          <Argument type="Pedido" name="pedido"/>
+          <Argument type="Orden" name="orden"/>
+        </Method>
+        <Method name="reporteProductos" returnType="void" visibility="public"/>
+        <Method name="reporteOrdenPedido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Orden" target="Pedido" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Producto" target="Pedido" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

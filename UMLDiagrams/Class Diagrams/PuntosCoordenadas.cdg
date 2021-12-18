@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PuntosCoordenadas">
+  <ClassDiagramComponents>
+    <Class name="Punto" package="" visibility="public" xPosition="103.0" yPosition="109.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+        <Field name="z" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="z"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="punto" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Plano" package="" visibility="public" xPosition="390.0" yPosition="33.0">
+      <Fields>
+        <Field name="puntos" type="ArrayList&lt;Punto&gt;" visibility="private"/>
+        <Field name="coordenadasX" type="Object" visibility="private"/>
+        <Field name="coordenadasY" type="Object" visibility="private"/>
+        <Field name="coordenadasZ" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="m"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="agregarPunto" returnType="void" visibility="public"/>
+        <Method name="buscarPunto" returnType="Punto" visibility="public">
+          <Argument type="Punto" name="unPunto"/>
+        </Method>
+        <Method name="clasificaPuntos" returnType="void" visibility="public"/>
+        <Method name="distanciaDosPuntos" returnType="double" visibility="public">
+          <Argument type="int" name="indice1"/>
+          <Argument type="int" name="indice2"/>
+        </Method>
+        <Method name="losPuntos" returnType="void" visibility="public"/>
+        <Method name="lasX" returnType="void" visibility="public"/>
+        <Method name="lasY" returnType="void" visibility="public"/>
+        <Method name="lasZ" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
